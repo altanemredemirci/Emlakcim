@@ -24,6 +24,11 @@ namespace Emlakcim.Entity
         [StringLength(10)]
         public string Type { get; set; }
 
+        public decimal Price { get; set; }
+        public bool Status { get; set; }
+        public bool IsPopular { get; set; }
+
+
         public int CityId { get; set; }
         public City City { get; set; }
 

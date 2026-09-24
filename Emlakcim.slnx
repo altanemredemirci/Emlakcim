@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Emlakcim.DAL/Emlakcim.DAL.csproj" />
   <Project Path="Emlakcim.Entity/Emlakcim.Entity.csproj" />
   <Project Path="Emlakcim.UI/Emlakcim.UI.csproj" />
 </Solution>
