@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Emlakcim.BLL/Emlakcim.BLL.csproj" Id="775d8379-e7dd-45ae-a855-570d21bbe6ba" />
   <Project Path="Emlakcim.DAL/Emlakcim.DAL.csproj" />
   <Project Path="Emlakcim.Entity/Emlakcim.Entity.csproj" />
   <Project Path="Emlakcim.UI/Emlakcim.UI.csproj" />

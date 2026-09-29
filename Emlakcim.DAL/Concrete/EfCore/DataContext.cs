@@ -6,13 +6,13 @@ using System.Text;
 
 namespace Emlakcim.DAL.Concrete.EfCore
 {
-    internal class DataContext:DbContext //entityFrameworkCore paketinden geliyor.
+    public class DataContext:DbContext //entityFrameworkCore paketinden geliyor.
     {
 
         //Database bağlantısının tanımlandığı alan.
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-58CMK8T\\SQLEXPRESS; Database=MakaanDB; Trusted_Connection=true; TrustServerCertificate=true;");//EntityFrameworkCore.SqlServer paketi
+            optionsBuilder.UseSqlServer("Server=202-3\\SQLEXPRESS; Database=MakaanDB; Trusted_Connection=true; TrustServerCertificate=true;");//EntityFrameworkCore.SqlServer paketi
         }
 
         public DbSet<City> Cities { get; set; }

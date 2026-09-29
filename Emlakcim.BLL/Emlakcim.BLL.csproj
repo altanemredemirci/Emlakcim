@@ -1,13 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Emlakcim.BLL\Emlakcim.BLL.csproj" />
+    <ProjectReference Include="..\Emlakcim.DAL\Emlakcim.DAL.csproj" />
     <ProjectReference Include="..\Emlakcim.Entity\Emlakcim.Entity.csproj" />
   </ItemGroup>
 

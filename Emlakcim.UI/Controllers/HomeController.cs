@@ -1,3 +1,4 @@
+using Emlakcim.BLL.Abstract;
 using Emlakcim.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -8,6 +9,7 @@ namespace Emlakcim.UI.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
         }       
     }
