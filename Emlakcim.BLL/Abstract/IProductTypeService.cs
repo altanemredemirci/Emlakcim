@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Emlakcim.BLL.Abstract
 {
-    public interface IProductService:IRepositoryService<Product>
+    public interface IProductTypeService:IRepositoryService<ProductType>
     {
     }
 }

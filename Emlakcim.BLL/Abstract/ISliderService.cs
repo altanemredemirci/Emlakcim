@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Emlakcim.BLL.Abstract
 {
-    public interface IProductService:IRepositoryService<Product>
+    public interface ISliderService
     {
+        List<Slider> GetAll();
     }
 }
