@@ -6,10 +6,10 @@ using System.Text;
 
 namespace Emlakcim.DAL.Abstract
 {
-    //<T> Generic Type
+    //<T> Generic Type: Kendisine Miras yoluyla bir class tanımı gönderilecek. Gönderilen class a görem metotlar çalışacak.
     public interface IRepository<T> where T : class
     {
-        List<T> GetAll(Expression<Func<T,bool>> filter=null);
+        List<T> GetAll(Expression<Func<T, bool>> filter = null);
         T GetById(int id);
 
         void Create(T entity);

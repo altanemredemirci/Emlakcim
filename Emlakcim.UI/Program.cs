@@ -15,7 +15,7 @@ namespace Emlakcim.UI
             builder.Services.AddControllersWithViews();
 
 
-            
+
 
             #region LifeCycle: AddTransient,AddScoped,AddSingleton
             /*
@@ -98,8 +98,27 @@ Singleton  → Tüm uygulamada bir tane
             #endregion
 
             //Dependency Injection : Bağımlılık Yönetimi
+            builder.Services.AddScoped<IProductTypeService, ProductTypeService>();
+            builder.Services.AddScoped<IProductTypeDal, EfCoreProductTypeDal>();
+
+            builder.Services.AddScoped<ISliderService, SliderService>();
+            builder.Services.AddScoped<ISliderDal, EfCoreSliderDal>();
+
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<IProductDal, EfCoreProductDal>();
+
+
+
+            ///<summary>
+            ///Kullanıcı Index sayfasını açarken HomePropertyList Componentini çalıştırır.
+            ///Component kendi içerisinde IProductService.GetAll() metodunu çağırır.
+            ///Yukarıda yazdığımız AddScope sayesinde IProductService interface'i ProductService.GetAll metodunu tetikler.
+            ///ProductService içerisinde IProductDal.GetAll() metodu çağrılır.
+            ///Yukarıda yazdığımız AddScope sayesinde IProductDal interface'i EfCoreProductDal.GetAll metodunu tetikler.
+            /// </summary>
+
+
+
 
             var app = builder.Build();
 

@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Emlakcim.DAL.Abstract
 {
-    public interface IProductDal:IRepository<Product>
+    public interface IProductDal : IRepository<Product>
     {
-     
+        List<Product> GetPopularAll();
     }
 }

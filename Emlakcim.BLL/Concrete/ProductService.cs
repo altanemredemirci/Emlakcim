@@ -3,6 +3,7 @@ using Emlakcim.DAL.Abstract;
 using Emlakcim.Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Emlakcim.BLL.Concrete
@@ -27,14 +28,20 @@ namespace Emlakcim.BLL.Concrete
             _productDal.Delete(entity);
         }
 
-        public List<Product> GetAll()
+
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
-            return _productDal.GetAll();
+            return _productDal.GetAll(filter);
         }
 
         public Product GetById(int id)
         {
             return _productDal.GetById(id);
+        }
+
+        public List<Product> GetPopularAll()
+        {
+            return _productDal.GetPopularAll();
         }
 
         public void Update(Product entity)

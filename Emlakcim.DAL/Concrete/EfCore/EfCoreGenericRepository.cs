@@ -7,14 +7,14 @@ using System.Text;
 
 namespace Emlakcim.DAL.Concrete.EfCore
 {
-    public class EfCoreGenericRepository<T, TContext> : IRepository<T> where T :class
+    public class EfCoreGenericRepository<T, TContext> : IRepository<T> where T : class
         where TContext : DbContext, new()
     {
         public void Create(T entity)
         {
-            using(var context = new TContext())
+            using (var context = new TContext())
             {
-                context.Set<T>().Add(entity); //Set<T> DbSet<Product> Products
+                context.Set<T>().Add(entity); //Set<T> DbSet<Product> context.Products.Add(entity)
                 context.SaveChanges();
             }
         }
@@ -23,14 +23,14 @@ namespace Emlakcim.DAL.Concrete.EfCore
         {
             using (var context = new TContext())
             {
-                context.Set<T>().Remove(entity); 
+                context.Set<T>().Remove(entity);
                 context.SaveChanges();
             }
         }
 
-        public List<T> GetAll(Expression<Func<T,bool>> filter)
+        public virtual List<T> GetAll(Expression<Func<T, bool>> filter) //Expression : Where(i=> i.Id>3)
         {
-            using(var context = new TContext())
+            using (var context = new TContext())
             {
                 return filter == null
                     ? context.Set<T>().ToList()
@@ -48,7 +48,7 @@ namespace Emlakcim.DAL.Concrete.EfCore
 
         public void Update(T entity)
         {
-             using (var context = new TContext())
+            using (var context = new TContext())
             {
                 context.Entry(entity).State = EntityState.Modified;
                 context.SaveChanges();

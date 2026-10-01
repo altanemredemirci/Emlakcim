@@ -1,23 +1,22 @@
 ﻿using Emlakcim.DAL.Abstract;
 using Emlakcim.Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Emlakcim.DAL.Concrete.EfCore
 {
-    internal class EfCoreSliderDal : ISliderDal
+    public class EfCoreSliderDal : ISliderDal
     {
-        private readonly DataContext _context;
-
-        public EfCoreSliderDal(DataContext context)
+        
+        public Slider GetByPage(Expression<Func<Slider, bool>> filter)
         {
-            _context = context;
-        }
-
-        public List<Slider> GetAll()
-        {
-            return _context.Sliders.ToList();
+            using(var context = new DataContext())
+            {
+                return context.Sliders.Where(filter).FirstOrDefault();
+            }            
         }
     }
 }

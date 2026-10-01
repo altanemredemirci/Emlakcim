@@ -7,5 +7,6 @@ namespace Emlakcim.BLL.Abstract
 {
     public interface IProductService:IRepositoryService<Product>
     {
+        List<Product> GetPopularAll();
     }
 }
