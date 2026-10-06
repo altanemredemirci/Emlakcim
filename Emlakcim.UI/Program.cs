@@ -111,6 +111,8 @@ Singleton  → Tüm uygulamada bir tane
             builder.Services.AddScoped<IProductDal, EfCoreProductDal>();
 
 
+            builder.Services.AddScoped<IWhoWeAreService, WhoWeAreService>();
+            builder.Services.AddScoped<IWhoWeAreDal, EfCoreWhoWeAreDal>();
 
             ///<summary>
             ///Kullanıcı Index sayfasını açarken HomePropertyList Componentini çalıştırır.

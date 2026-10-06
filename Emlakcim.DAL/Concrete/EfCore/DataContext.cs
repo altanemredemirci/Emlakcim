@@ -22,5 +22,7 @@ namespace Emlakcim.DAL.Concrete.EfCore
         public DbSet<Agency> Agencies  { get; set; }
         public DbSet<District> Districts  { get; set; }
         public DbSet<Slider> Sliders  { get; set; }
+        public DbSet<WhoWeAre> WhoWeAres { get; set; }
+        public DbSet<Employment> Employments { get; set; }
     }
 }
