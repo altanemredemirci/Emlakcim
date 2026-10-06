@@ -1,4 +1,6 @@
-﻿using Emlakcim.BLL.Abstract;
+﻿using AutoMapper;
+using Emlakcim.BLL.Abstract;
+using Emlakcim.BLL.DTOs.ProductTypeDTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Emlakcim.UI.ViewComponents.Home
@@ -6,15 +8,18 @@ namespace Emlakcim.UI.ViewComponents.Home
     public class _HomeCategoryViewComponentPartial : ViewComponent
     {
         private readonly IProductTypeService _productTypeService;
+        private readonly IMapper _mapper;
 
-        public _HomeCategoryViewComponentPartial(IProductTypeService productTypeService)
+        public _HomeCategoryViewComponentPartial(IProductTypeService productTypeService, IMapper mapper)
         {
             _productTypeService = productTypeService;
+            _mapper = mapper;
         }
         public IViewComponentResult Invoke()
         {
-            var models = _productTypeService.GetAll();
-            return View(models);
+            var productTypes = _productTypeService.GetAll();
+
+            return View(_mapper.Map<List<ResultProductTypeDTO>>(productTypes));
         }
     }
 }

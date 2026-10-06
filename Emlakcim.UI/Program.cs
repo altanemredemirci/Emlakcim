@@ -2,6 +2,7 @@ using Emlakcim.BLL.Abstract;
 using Emlakcim.BLL.Concrete;
 using Emlakcim.DAL.Abstract;
 using Emlakcim.DAL.Concrete.EfCore;
+using Emlakcim.UI.Mapping;
 
 namespace Emlakcim.UI
 {
@@ -14,8 +15,10 @@ namespace Emlakcim.UI
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-
-
+            builder.Services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<MapProfile>();
+            });
 
             #region LifeCycle: AddTransient,AddScoped,AddSingleton
             /*
