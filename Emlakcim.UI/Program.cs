@@ -117,6 +117,9 @@ Singleton  → Tüm uygulamada bir tane
             builder.Services.AddScoped<IAgencyService, AgencyService>();
             builder.Services.AddScoped<IAgencyDal, EfCoreAgencyDal>();
 
+            builder.Services.AddScoped<IClientService, ClientService>();
+            builder.Services.AddScoped<IClientDal, EfCoreClientDal>();
+
             ///<summary>
             ///Kullanıcı Index sayfasını açarken HomePropertyList Componentini çalıştırır.
             ///Component kendi içerisinde IProductService.GetAll() metodunu çağırır.
