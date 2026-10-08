@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Emlakcim.BLL.DTOs.AgencyDTO;
 using Emlakcim.BLL.DTOs.ProductDTO;
 using Emlakcim.BLL.DTOs.ProductTypeDTO;
 using Emlakcim.BLL.DTOs.SliderDTO;
@@ -15,6 +16,7 @@ namespace Emlakcim.UI.Mapping
             CreateMap<ProductType, ResultProductTypeDTO>().ReverseMap();
             CreateMap<Slider, ResultSliderDTO>().ReverseMap();
             CreateMap<WhoWeAre, ResultWhoWeAreDTO>().ReverseMap();
+            CreateMap<Agency, ResultAgencyDTO>().ReverseMap();
         }
     }
 }
