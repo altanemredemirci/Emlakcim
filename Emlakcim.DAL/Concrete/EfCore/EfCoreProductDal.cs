@@ -3,6 +3,7 @@ using Emlakcim.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Emlakcim.DAL.Concrete.EfCore
@@ -14,6 +15,14 @@ namespace Emlakcim.DAL.Concrete.EfCore
             using(var context = new DataContext())
             {
                 return context.Products.Where(i => i.IsPopular == true && i.Status == true).Include(i => i.ProductType).Include(i => i.City).ToList();
+            }
+        }
+
+        public override List<Product> GetAll(Expression<Func<Product, bool>> filter)
+        {
+            using(var context = new DataContext())
+            {
+                return context.Products.Where(i => i.Status == true).Include(i => i.ProductType).Include(i => i.City).ToList();
             }
         }
     }
